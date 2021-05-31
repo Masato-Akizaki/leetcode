@@ -9,12 +9,10 @@
 # @param {Integer} target
 # @return {Integer[]}
 def two_sum(nums, target)
-  nums.each_with_index do |_, idx|
-    i = idx + 1
-    while i < nums.length
-      return [idx, i] if nums[idx] + nums[i] == target
-      i + 1
-    end
+  hash = {}
+  nums.each_with_index do |n, idx|
+    return [hash[target - n], idx] if hash[target - n]
+    hash[n] = idx
   end
 end
 # @lc code=end
