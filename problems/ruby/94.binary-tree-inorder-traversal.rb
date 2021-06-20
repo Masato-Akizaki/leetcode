@@ -17,16 +17,25 @@
 # @param {TreeNode} root
 # @return {Integer[]}
 def inorder_traversal(root)
-  vals = []
-  return vals unless root
-  if root.left != nil
-    vals += inorder_traversal(root.left)
+  res = []
+  current = root
+  pre = TreeNode.new(nil)
+  while current != nil
+    if current.left == nil
+      res << current.val
+      current = current.right
+    else
+      pre = current.left
+      while pre.right != nil
+        pre = pre.right
+      end
+      pre.right = current
+      temp = current
+      current = current.left
+      temp.left = nil
+    end
   end
-  vals << root.val
-  if root.right != nil
-    vals += inorder_traversal(root.right)
-  end
-  vals
+  res
 end
 # @lc code=end
 
