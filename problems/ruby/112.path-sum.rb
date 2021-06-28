@@ -18,6 +18,7 @@
 # @param {Integer} target_sum
 # @return {Boolean}
 def has_path_sum(root, target_sum)
+  return false unless root
   sum_path(root).include?(target_sum)
 end
 
