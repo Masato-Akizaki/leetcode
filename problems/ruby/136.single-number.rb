@@ -8,15 +8,7 @@
 # @param {Integer[]} nums
 # @return {Integer}
 def single_number(nums)
-  return nums.first if nums.size < 2
-  
-  num = nums[0]
-  (1..nums.size-1).each do |i|
-    p num
-    p num ^= nums[i]
-  end
-  
-  num
+  nums.tally.key(1)
 end
 # @lc code=end
 
