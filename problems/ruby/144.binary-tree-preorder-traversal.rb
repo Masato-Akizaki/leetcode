@@ -17,12 +17,16 @@
 # @param {TreeNode} root
 # @return {Integer[]}
 def preorder_traversal(root)
+  return [] unless root
+  stack = [root]
   res = []
-  return res unless root
-  res << root.val
-  res << preorder_traversal(root.left) if root.left
-  res << preorder_traversal(root.right) if root.right
-  res.flatten
+  until stack.empty?
+    curr_tree = stack.pop
+    res << curr_tree.val
+    stack.push(curr_tree.right) if curr_tree.right
+    stack.push(curr_tree.left) if curr_tree.left
+  end
+  res
 end
 
 # @lc code=end
