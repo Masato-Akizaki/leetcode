@@ -8,19 +8,20 @@
 # @param {Integer} n
 # @return {Integer}
 def count_primes(n)
-  return 0 if n <= 2
+  prime = [true] * n
+  count = 0
 
-  prime = [2]
-  [*3..n-1].each do |i|
-    is_prime = true
-    prime.each do |j|
-      break if j > i**0.5 
-      break is_prime = false if i % j == 0
+  [*2..n].each do |i|
+    if prime[i] == true
+      count += 1
+      j = 2
+      while i * j < n
+        prime[i*j] = false
+        j += 1
+      end
     end
-    prime << i if is_prime
   end
-  prime.count
+  count
 end
 # @lc code=end
 
-999983
