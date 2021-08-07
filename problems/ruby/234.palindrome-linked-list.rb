@@ -16,12 +16,12 @@
 # @param {ListNode} head
 # @return {Boolean}
 def is_palindrome(head)
-  array = []
+  numbers = []
   while head
-    array << head.val
+    numbers << head.val
     head = head.next
   end
-  array == array.reverse
+  numbers == numbers.reverse
 end
 # @lc code=end
 
