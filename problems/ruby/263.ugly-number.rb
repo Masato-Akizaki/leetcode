@@ -24,4 +24,3 @@ def is_ugly(n)
 end
 # @lc code=end
 
--2147483648
