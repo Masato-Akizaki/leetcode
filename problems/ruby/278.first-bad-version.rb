@@ -13,7 +13,6 @@
 # @param {Integer} n
 # @return {Integer}
 def first_bad_version(n)
-  return n if n == 1
   min, max = 1, n
   middle = (min + max) / 2
 
