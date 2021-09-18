@@ -23,4 +23,3 @@ def next_greater_element(nums1, nums2)
 end
 # @lc code=end
 
-"[1,3,5,2,4]\n[6,5,4,3,2,1,7]"
