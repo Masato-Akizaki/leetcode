@@ -15,6 +15,3 @@ def max_count(m, n, ops)
 end
 # @lc code=end
 
-40000
-40000
-[]
