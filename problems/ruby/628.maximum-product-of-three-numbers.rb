@@ -13,5 +13,3 @@ def maximum_product(nums)
 end
 # @lc code=end
 
-"[-100,-2,-3,1]"
-"[-1,-2,-3]"
