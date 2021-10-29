@@ -8,16 +8,21 @@
 # @param {String} s
 # @return {Boolean}
 def valid_palindrome(s)
-  s_chars = s.chars
-  s_chars.each_with_index do |c, i|
-    if i == 0
-      temp_s = s_chars[i+1..-1]
-    else
-      temp_s = s_chars[0..i-1] + s_chars[i+1..-1]
-    end
-    return true if temp_s == temp_s.reverse
+  return true if palindrome?(s)
+
+  low = 0
+  high = s.length - 1
+
+  while s[low] == s[high]
+    low += 1
+    high -= 1
   end
-  return false
+
+  palindrome?(s[low..high-1]) || palindrome?(s[low+1..high])
+end
+
+def palindrome?(s)
+  s == s.reverse
 end
 # @lc code=end
 
