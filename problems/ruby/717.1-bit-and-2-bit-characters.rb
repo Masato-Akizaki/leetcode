@@ -19,7 +19,6 @@ def is_one_bit_character(bits)
       i += 1
     end
   end
-  p array
   array[-1] == "0"
 end
 # @lc code=end
