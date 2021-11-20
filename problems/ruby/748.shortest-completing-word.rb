@@ -10,19 +10,18 @@
 # @return {String}
 def shortest_completing_word(license_plate, words)
   completing_words = []
-  letters = license_plate.gsub(/[\d]|[\s]/, "").downcase.chars.tally.to_a
+  letters = license_plate.gsub(/[\d]|[\s]/, "").downcase.chars.tally
   words.each do |word|
-    # p word
-    # p letters
-    # p word.chars.tally.to_a
-    # p (letters - word.chars.tally.to_a)
-    # p (letters - word.chars.tally.to_a).to_h
-    completing_words << word if (letters - word.chars.tally.to_a).empty?
+    judge = []
+    word_hash = word.chars.tally
+    letters.each do |k,v|
+      next judge << false if word_hash[k].nil?
+      judge << (word_hash[k] >= v)
+    end
+    completing_words << word if judge.all?(true)  
   end
-  # p completing_words
-  p min_len = completing_words.map {|a| a.length}.min
-  p completing_words.find{|x| x.length == min_len}
+  min_len = completing_words.map {|a| a.length}.min
+  completing_words.find{|x| x.length == min_len}
 end
 # @lc code=end
 
-""GrC8950"\n["measure","other","every","base","according","level","meeting","none","marriage","rest"]"
