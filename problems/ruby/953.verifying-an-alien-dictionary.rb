@@ -22,4 +22,3 @@ def is_alien_sorted(words, order)
 end
 # @lc code=end
 
-"["kuvp","q"]\n"ngxlkthsjuoqcpavbfdermiywz""
