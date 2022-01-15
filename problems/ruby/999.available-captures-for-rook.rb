@@ -14,8 +14,6 @@ def num_rook_captures(board)
     rook = [i, row.index("R")] if row.include?("R")
   end
 
-  p rook
-
   attacking += 1 if board[rook[0]][0..rook[1]-1].delete_if{|x| x == "."}.last == "p" && rook[1] != 0
   attacking += 1 if board[rook[0]][rook[1]+1..-1].delete_if{|x| x == "."}.first == "p" && rook[1] != 7
   attacking += 1 if board.transpose[rook[1]][0..rook[0]-1].delete_if{|x| x == "."}.last == "p" && rook[0] != 0
