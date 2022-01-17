@@ -9,7 +9,7 @@
 # @param {Integer} k
 # @return {Integer}
 def largest_sum_after_k_negations(nums, k)
-  for i in 1..k do
+  (1..k).each do
     min = nums.min
     index = nums.index(min)
     nums[index] = min * -1
