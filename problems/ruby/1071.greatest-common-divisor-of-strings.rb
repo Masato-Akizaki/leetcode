@@ -22,4 +22,3 @@ def gcd_of_strings(str1, str2)
 end
 # @lc code=end
 
-""ABABAB"\n"ABAB""
