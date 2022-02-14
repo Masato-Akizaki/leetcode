@@ -1,17 +1,19 @@
 #
-# @lc app=leetcode id=1184 lang=ruby
+# @lc app=leetcode id=1185 lang=ruby
 #
-# [1184] Distance Between Bus Stops
+# [1185] Day of the Week
 #
 
 # @lc code=start
-# @param {Integer[]} distance
-# @param {Integer} start
-# @param {Integer} destination
-# @return {Integer}
-def distance_between_bus_stops(distance, start, destination)
-  start, destination = destination, start if start > destination
-  [distance[start..destination-1].sum, distance.sum - distance[start..destination-1].sum].min
+# @param {Integer} day
+# @param {Integer} month
+# @param {Integer} year
+# @return {String}
+require "date"
+WDAY = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+def day_of_the_week(day, month, year)
+    date ="#{year}-#{month}-#{day}"
+    WDAY[Date.strptime(date, '%Y-%m-%d').wday]
 end
 
 # @lc code=end
