@@ -1,18 +1,17 @@
 #
-# @lc app=leetcode id=1309 lang=ruby
+# @lc app=leetcode id=1313 lang=ruby
 #
-# [1309] Decrypt String from Alphabet to Integer Mapping
+# [1313] Decompress Run-Length Encoded List
 #
 
 # @lc code=start
-# @param {String} s
-# @return {String}
-def freq_alphabets(s)
-    [*'a'..'z'].reverse.each_with_index do |c, i|
-        int = (26 - i).to_s
-        int += '#' if (26 - i) >= 10
-        s.gsub!(/#{int}/, c) if s.include?(int)
+# @param {Integer[]} nums
+# @return {Integer[]}
+def decompress_rl_elist(nums)
+    arr = []
+    nums.each_slice(2) do |n, m|
+        arr += [m] * n
     end
-    return s
+    arr
 end
 # @lc code=end
