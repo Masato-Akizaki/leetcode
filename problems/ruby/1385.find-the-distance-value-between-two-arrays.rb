@@ -1,13 +1,24 @@
 #
-# @lc app=leetcode id=1380 lang=ruby
+# @lc app=leetcode id=1385 lang=ruby
 #
-# [1380] Lucky Numbers in a Matrix
+# [1385] Find the Distance Value Between Two Arrays
 #
 
 # @lc code=start
-# @param {Integer[][]} matrix
-# @return {Integer[]}
-def lucky_numbers(matrix)
-    matrix.map{|row| row.min } & matrix.transpose.map{|col| col.max }
+# @param {Integer[]} arr1
+# @param {Integer[]} arr2
+# @param {Integer} d
+# @return {Integer}
+def find_the_distance_value(arr1, arr2, d)
+  result = arr1.length
+  arr1.each do |i|
+    arr2.each do |j|
+      if (i-j).abs <= d
+        result -= 1
+        break
+      end
+    end
+  end
+  result
 end
 # @lc code=end
