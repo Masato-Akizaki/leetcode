@@ -17,6 +17,5 @@ def most_visited(n, rounds)
     visited_sectors = visited_sectors.flatten.tally
     max_times = visited_sectors.max{|x, y| x[1] <=> y[1]}[1]
     visited_sectors.select{|k, v| v == max_times}.keys.sort
-endrse
 end
 # @lc code=end
