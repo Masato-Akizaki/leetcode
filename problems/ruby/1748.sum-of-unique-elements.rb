@@ -10,3 +10,4 @@
 def sum_of_unique(nums)
     nums.tally.select{|_, v| v == 1}.keys.sum
 end
+# @lc code=end
