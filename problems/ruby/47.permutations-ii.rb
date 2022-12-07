@@ -8,7 +8,7 @@
 # @param {Integer[]} nums
 # @return {Integer[][]}
 def permute_unique(nums)
-  nums.permutation(nums.length).to_a
+  nums.permutation(nums.length).to_a.uniq
 end
 # @lc code=end
 
